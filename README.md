@@ -34,9 +34,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Math-Magicians <a name="about-project"></a>
+# 📖 React To-do Lists App <a name="about-project"></a>
 
-"Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to make simple calculations and read a random math-related quote.
+In this app, you can add, delete, submit and edit items. To edit items, simply double click on it. Once you are done, press the enter key to resubmit. This app will persist your data in the browser local storage. So whether you reload, close your app or reopened it, you still have access to your to-dos items.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -60,7 +60,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **The users are able to make different calculations**
+- **The users are able to add their to-do lists**
+- **The users are able to delete their to-do list tasks**
+- **The users are able to edit their to-do list tasks**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -69,7 +71,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 Please use the following link to access the website:
-- [Live Demo Link](#)
+- [Live Demo Link](https://kismoilov.github.io/react-todo-app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,7 +94,7 @@ To get a local copy up and running, follow these steps.
 
 1. Clone the repo by running the command
    ```sh
-    git clone https://github.com/KIsmoilov/math-magicians.git
+    git clone https://github.com/KIsmoilov/react-todo-app.git
    ```
 
 ### Install
@@ -101,7 +103,7 @@ Install this project with:
 
 2. Open the directory of the project
    ```sh
-   cd math-magicians
+   cd react-todo-app
    ```
 3. Open the directory of the src
    ```sh
@@ -156,7 +158,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **The user will be able to do mathematical calculations**
+- [ ] **The user will be able to drag and drop their to-do list tasks**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,7 +168,7 @@ You can deploy this project using:
 
 - Contributions, issues, and feature requests are welcome!
 
-- Feel free to check the [issues page](https://github.com/KIsmoilov/math-magicians/issues).
+- Feel free to check the [issues page](https://github.com/KIsmoilov/react-todo-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
