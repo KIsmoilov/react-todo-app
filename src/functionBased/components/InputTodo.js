@@ -1,48 +1,50 @@
-/* eslint-disable no-alert */
 /* eslint-disable react/prop-types */
+/* eslint-disable no-alert */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/state-in-constructor */
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { FaPlusCircle } from 'react-icons/fa';
 
-class InputTodo extends Component {
-    state = {
-      title: '',
-    };
+const InputTodo = (props) => {
+  const [inputText, setInputText] = useState({
+    title: '',
+  });
 
-    onChange = (e) => {
-      this.setState({
-        title: e.target.value,
+  const onChange = (e) => {
+    setInputText({
+      ...inputText,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputText.title.trim()) {
+      props.addTodoProps(inputText.title);
+      setInputText({
+        title: '',
       });
-    };
-
-    handleSubmit = (e) => {
-      e.preventDefault();
-      if (this.state.title.trim()) {
-        this.props.addTodoProps(this.state.title);
-        this.setState({
-          title: '',
-        });
-      } else {
-        alert('Please write item');
-      }
+    } else {
+      alert('Please write item');
     }
+  };
 
-    render() {
-      return (
-        <form onSubmit={this.handleSubmit} className="form-container">
-          <input
-            type="text"
-            className="input-text"
-            placeholder="Add todo..."
-            value={this.state.title}
-            name="title"
-            onChange={this.onChange}
-          />
-          <button className="input-submit">Submit</button>
-        </form>
-      );
-    }
-}
+  return (
+    <form onSubmit={handleSubmit} className="form-container">
+      <input
+        type="text"
+        className="input-text"
+        placeholder="Add todo..."
+        value={inputText.title}
+        name="title"
+        onChange={onChange}
+      />
+      <button type="submit" className="input-submit">
+        <FaPlusCircle
+          style={{ color: 'darkcyan', fontSize: '20px', marginTop: '2px' }}
+        />
+      </button>
+    </form>
+  );
+};
+
 export default InputTodo;
