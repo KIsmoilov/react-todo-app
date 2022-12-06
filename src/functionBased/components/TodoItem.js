@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import styles from './TodoItem.module.css';
 
-const TodoItem = (props) => {
+const TodoItem = ({
+  setUpdate, handleChangeProps, deleteTodoProps, todo,
+}) => {
   const [editing, setEditing] = useState(false);
 
   const handleEditing = () => {
@@ -24,7 +25,7 @@ const TodoItem = (props) => {
     textDecoration: 'line-through',
   };
 
-  const { completed, id, title } = props.todo;
+  const { completed, id, title } = todo;
 
   const viewMode = {};
   const editMode = {};
@@ -42,9 +43,9 @@ const TodoItem = (props) => {
           type="checkbox"
           className={styles.checkbox}
           checked={completed}
-          onChange={() => props.handleChangeProps(id)}
+          onChange={() => handleChangeProps(id)}
         />
-        <button type="submit" onClick={() => props.deleteTodoProps(id)}>
+        <button type="submit" onClick={() => deleteTodoProps(id)}>
           <FaTrash style={{ color: 'orangered', fontSize: '16px' }} />
         </button>
         <span style={completed ? completedStyle : null}>{title}</span>
@@ -55,7 +56,7 @@ const TodoItem = (props) => {
         className={styles.textInput}
         value={title}
         onChange={(e) => {
-          props.setUpdate(e.target.value, id);
+          setUpdate(e.target.value, id);
         }}
         onKeyDown={handleUpdatedDone}
       />
