@@ -11,10 +11,10 @@ root.render(
   <React.StrictMode>
     <Router basename={process.env.PUBLIC_URL}>
       <Navbar />
-      <Router>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-      </Router>
+      </Routes>
     </Router>
   </React.StrictMode>,
 );
